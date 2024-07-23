@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="checkoutstyles.css">
+    <script src="firebaseConfig.js"></script>
+    <script src="orders.js"></script>
 </head>
 <body>
 <header>
@@ -22,9 +24,46 @@
             <!-- CART ITEMS will be dynamically added here -->
         </ul>
         <p>Total: <span id="cart-total">R0.00</span></p>
-        <button id="confirm-checkout">Confirm Checkout</button>
+        <form id="orderForm">
+            <label for="drinkName">Drink Name:</label>
+            <input type="text" id="drinkName" name="drinkName" required><br><br>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required><br><br>
+
+            <label for="totalCost">Total Cost:</label>
+            <input type="number" id="totalCost" name="totalCost" required><br><br>
+
+            <button type="submit">Place Order</button>
+        </form>
     </section>
 </main>
+
+<script>
+    const orderForm = document.getElementById('orderForm');
+
+    orderForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const drinkName = document.getElementById('drinkName').value;
+        const quantity = parseInt(document.getElementById('quantity').value);
+        const totalCost = parseFloat(document.getElementById('totalCost').value);
+
+        const order = {
+            drinkName: drinkName,
+            quantity: quantity,
+            totalCost: totalCost
+        };
+
+        addOrder(order); // Call function to add order to Firebase
+
+        // Optional: Show confirmation to user
+        alert('Order placed successfully!');
+
+        // Reset form fields
+        orderForm.reset();
+    });
+</script>
 
 <script src="checkoutscript.js"></script>
 <script src="checkout.js"></script>
