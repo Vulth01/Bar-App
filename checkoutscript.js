@@ -1,4 +1,3 @@
-
 import { database } from "./firebaseConfig.js";
 
 document.addEventListener('DOMContentLoaded', function() {
