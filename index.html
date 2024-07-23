@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firstavern</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="title-container">
+        <h1>Firstavern</h1>
+    </div>
+    <p>We will have (your) order</p>
+</header>
+
+<main>
+    <section id="menu">
+        <h2>Menu</h2>
+        <select id="drink-select">
+                <optgroup label="Beer">
+                    <option value="20.00">Beer - BLACK LABEL - R 20.00</option>
+                    <option value="20.00">Beer - CASTLE LITE - R 20.00</option>
+                    <option value="20.00">Beer - CASTLE LAGER - R 20.00</option>
+                    <option value="25.00">Beer - CORONA - R 25.00</option>
+                    <option value="20.00">Beer - HANSA - R 20.00</option>
+                    <option value="20.00">Beer - HEINEKEN ZERO - R 20.00</option>
+                    <option value="25.00">Beer - WINDHOEK DRAUGHT - R 25.00</option>
+                </optgroup>
+                <optgroup label="Cider">
+                    <option value="20.00">Cider - HUNTERS DRY - R 20.00</option>
+                    <option value="20.00">Cider - SAVANNA - R 20.00</option>
+                </optgroup>
+                <optgroup label="Cooler">
+                    <option value="20.00">Cooler - BRUTAL FRUIT - R 20.00</option>
+                    <option value="20.00">Cooler - FLYING FISH - R 20.00</option>
+                    <option value="22.00">Cooler - SMIRNOFF SPIN - R 22.00</option>
+                    <option value="22.00">Cooler - BELGRAVIA - R 22.00</option>
+                </optgroup>
+                <optgroup label="Cordial">
+                    <option value="2.00">Cordial - ROSES KOLA - R 2.00</option>
+                    <option value="2.00">Cordial - ROSES LIME - R 2.00</option>
+                    <option value="2.00">Cordial - ROSES PASSIONFRIUT - R 2.00</option>
+                </optgroup>
+                <optgroup label="Mix">
+                    <option value="12.00">Mix - BITTER LEMON - R 12.00</option>
+                    <option value="12.00">Mix - CHEEKY CRANBERRY - R 12.00</option>
+                    <option value="12.00">Mix - COCA COLA - R 12.00</option>
+                    <option value="12.00">Mix - COCA COLA ZERO - R 12.00</option>
+                    <option value="12.00">Mix - INDIAN TONIC - R 12.00</option>
+                    <option value="15.00">Mix - LIQUI FRUIT - R 15.00</option>
+                    <option value="12.00">Mix - PINK TONIC - R 12.00</option>
+                    <option value="12.00">Mix - SODA WATER - R 12.00</option>
+                    <option value="15.00">Mix - SPRITE ZERO - R 15.00</option>
+                </optgroup>
+                <optgroup label="Spirit">
+                    <option value="15.00">Spirit - BELLS - R 15.00</option>
+                    <option value="15.00">Spirit - CAPTAIN MORGAN - R 15.00</option>
+                    <option value="15.00">Spirit - GLEN GRANT - R 15.00</option>
+                    <option value="15.00">Spirit - GLENDOWER - R 15.00</option>
+                    <option value="15.00">Spirit - GORDONS GIN - R 15.00</option>
+                    <option value="15.00">Spirit - J & B WHISKY - R 15.00</option>
+                    <option value="15.00">Spirit - JAGERMEISTER - R 15.00</option>
+                    <option value="20.00">Spirit - JAMESONS - R 20.00</option>
+                    <option value="15.00">Spirit - KLIPDRIFT - R 15.00</option>
+                    <option value="20.00">Spirit - MONKEY SHOULDER - R 20.00</option>
+                    <option value="15.00">Spirit - SKYY VODKA - R 15.00</option>
+                    <option value="15.00">Spirit - SMIRNOFF VODKA - R 15.00</option>
+                    <option value="15.00">Spirit - SOUTHERN COMFORT - R 15.00</option>
+                    <option value="15.00">Spirit - SPICED GOLD - R 15.00</option>
+                    <option value="15.00">Spirit - STRAWBERRY LIPS - R 15.00</option>
+                    <option value="15.00">Spirit - TANQUERAY GIN - R 15.00</option>
+                    <option value="15.00">Spirit - TEQUILA - R 15.00</option>
+                </optgroup>
+                <optgroup label="Cigarettes">
+                    <option value="60.00">Cigarettes - MARLBORO BLUE ICE - R 60.00</option>
+                    <option value="50.00">Cigarettes - MARLBORO BEYOND RED - R 50.00</option>
+                    <option value="60.00">Cigarettes - MARLBORO GOLD - R 60.00</option>
+                    <option value="50.00">Cigarettes - STUYVESANT (BLUE) - R 50.00</option>
+                    <option value="50.00">Cigarettes - STUYVESANT (RED) - R 50.00</option>
+                </optgroup>
+            </select>
+
+        <div class="quantity-selector">
+            <label for="select-quantity">Quantity:</label>
+            <input type="number" id="select-quantity" min="1" max="10" value="1">
+        </div>
+        <button id="add-to-cart">Add to Cart</button>
+    </section>
+
+    <section id="cart">
+        <h2>Cart</h2>
+        <div class="cart-header">
+        <div class="cart-header-name">Name</div>
+        <div class="cart-header-quantity">Quantity</div>
+        <div class="cart-header-total">Total</div>
+        </div>
+        <ul id="cart-items">
+            <!-- CART ITEMS -->
+            <!-- Add more items as needed -->
+        </ul>
+        <p>Total: <span id="cart-total">R 0.00</span></p>
+        <button id="checkout-btn">Checkout</button>
+    </section>
+
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
