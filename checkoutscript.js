@@ -1,3 +1,6 @@
+
+import { database } from "./firebaseConfig.js";
+
 document.addEventListener('DOMContentLoaded', function() {
     const cartItemsList = document.getElementById('cart-items');
     const cartTotal = document.getElementById('cart-total');
