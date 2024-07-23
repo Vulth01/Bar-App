@@ -17,9 +17,7 @@
 <main>
     <section id="menu">
         <h2>Menu</h2>
-        <select id="drink-select">
-                <optgroup label="Beer">
-                    <option value="20.00">Beer - BLACK LABEL - R 20.00</option>
+        <select id="drink-select">                    <option value="20.00">Beer - BLACK LABEL - R 20.00</option>
                     <option value="20.00">Beer - CASTLE LITE - R 20.00</option>
                     <option value="20.00">Beer - CASTLE LAGER - R 20.00</option>
                     <option value="25.00">Beer - CORONA - R 25.00</option>
@@ -79,31 +77,29 @@
                     <option value="50.00">Cigarettes - STUYVESANT (BLUE) - R 50.00</option>
                     <option value="50.00">Cigarettes - STUYVESANT (RED) - R 50.00</option>
                 </optgroup>
-            </select>
+        </select>
 
         <div class="quantity-selector">
             <label for="select-quantity">Quantity:</label>
             <input type="number" id="select-quantity" min="1" max="10" value="1">
         </div>
+
         <button id="add-to-cart">Add to Cart</button>
     </section>
 
     <section id="cart">
         <h2>Cart</h2>
         <div class="cart-header">
-        <div class="cart-header-name">Name</div>
-        <div class="cart-header-quantity">Quantity</div>
-        <div class="cart-header-total">Total</div>
+            <div class="cart-header-name">Name</div>
+            <div class="cart-header-quantity">Quantity</div>
+            <div class="cart-header-total">Total</div>
         </div>
         <ul id="cart-items">
-            <!-- CART ITEMS -->
-            <!-- Add more items as needed -->
+            <!-- Cart items will be dynamically added here -->
         </ul>
         <p>Total: <span id="cart-total">R 0.00</span></p>
         <button id="checkout-btn">Checkout</button>
     </section>
-
-
 </main>
 
 <script src="firebaseConfig.js"></script>
@@ -112,4 +108,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
