@@ -1,3 +1,5 @@
+import { database } from "./firebaseConfig.js";
+
 const drinkSelect = document.getElementById('drink-select');
 const addToCartButton = document.getElementById('add-to-cart');
 const cartItemsList = document.getElementById('cart-items');
