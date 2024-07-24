@@ -197,14 +197,14 @@ h2 {
 }
 
 .cart-item-name {
-    
+
     font-size: 1.2rem; /* Adjust font size for better readability on small screens */
     color: #333;
     flex: 1; /* Allow flex items to grow */
     text-align: left; /* Center text for uniformity */
 }
 .cart-item-quantity {
-    
+
     font-size: 1.2rem; /* Adjust font size for better readability on small screens */
     color: #333;
     flex: 1; /* Allow flex items to grow */
