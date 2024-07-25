@@ -1,15 +1,15 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0;                                         /* MAIN BACKGROUND */
     margin: 0;
     padding: 0;
     color: #333;
 }
 
 header {
-    color: rgba(255, 255, 255, 1); /* HEADER TEXT */
+    color: rgba(255, 255, 255, 1);                                     /* HEADER TEXT */
     font-family: 'Georgia', serif;
-    background: linear-gradient(90deg, #b7c2ed, #3a67b0, #b7c2ed);
+    background: linear-gradient(90deg, #b7c2ed, #9a4790, #b7c2ed);     /* HEADER COLOUR - #3a67b0 for main and  */
     background-size: 200% 100%;
     animation: moveGradient 10s infinite linear;
     text-align: center;
@@ -24,9 +24,9 @@ header .title-container {
     overflow: hidden;
 }
 
-header h1 {
+header h1 {                                                            /* TITLE */
     font-family: 'Georgia', serif;
-    color: rgba(255, 255, 255, 1); /* TITLE TEXT */
+    color: rgba(255, 255, 255, 1);
     font-size: 3rem;
     text-transform: uppercase;
     margin: 0;
@@ -45,7 +45,7 @@ header .title-container::before {
     z-index: -1;
 }
 
-@keyframes moveGradient {
+@keyframes moveGradient {                                              /* HEADER ANIMATION */
     0% { background-position: 0% center; }
     50% { background-position: 100% center; }
     100% { background-position: 200% center; }
@@ -58,7 +58,7 @@ main {
     padding: 20px;
 }
 
-#menu, #cart {                                                                      /* MENU BACKGROUND */
+#menu, #cart {                                                         /* MENU BACKGROUND */
     background-color: rgba(180, 240, 255, 0.3); 
     padding: 20px;
     border-radius: 12px;
@@ -120,7 +120,7 @@ h2 {
     border-color: #007acc;
 }
 
-#add-to-cart, #checkout-btn {                                                       /*CHECKOUT BUTTON*/
+#add-to-cart, #checkout-btn {                                         /* CHECKOUT BUTTON */
     padding: 16px 32px;
     background-color: #3a67b0;
     color: white;
@@ -136,7 +136,7 @@ h2 {
 }
 
 #cart {
-    background-color: rgba(180, 240, 255, 0.3);                                     /* CART BACKGROUND */
+    background-color: rgba(180, 240, 255, 0.3);                       /* CART BACKGROUND */
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -150,44 +150,43 @@ h2 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Header for Cart Section */
-#cart h2 {
-    font-size: 2rem; /* Adjust font size for better readability on small screens */
+                                                                    
+#cart h2 {                                                            /* CART TITLE */
+    font-size: 2rem;
     margin-bottom: 20px;
-    color: #3a67b0;
+    color: #1e90ff;
 }
 
-/* Cart Header for Item Details */
-.cart-header {
+
+.cart-header {                                                        /* CART HEADER */
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr; /* Adjust column widths for spacing */
+    grid-template-columns: 1.3fr 1fr 1fr;
     gap: 10px;
-    margin-bottom: 10px; /* Space between header and items */
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
-/* Specific styling for headers to shift Quantity and Total */
+                                                                      /* NAME / QUANTITY / TOTAL - SPACING */
 .cart-header .cart-header-name {
     padding-left: 40px;
-    text-align: left; /* Ensure "Name" is aligned to the left */
+    text-align: left;
 }
 
 .cart-header .cart-header-quantity{
-    padding-left: 0px; /* Add padding to move Quantity and Total headers to the left */
-    text-align: left; /* Center text for uniformity */
-
+    padding-left: 0px; 
+    text-align: left; 
 }
 .cart-header .cart-header-total {
-    padding-left: 10px; /* Add padding to move Quantity and Total headers to the left */
-    text-align: left; /* Center text for uniformity */
+    padding-left: 10px; 
+    text-align: left;
 }
 
 
-/* Individual Cart Item */
+                                                                      /* CART ITEMS */
 .cart-item {
-    display: flex; /* Use flexbox for better alignment */
-    justify-content: space-between; /* Space items evenly */
-    align-items: left; /* Vertically center items */
+    display: flex; 
+    justify-content: space-between;
+    align-items: left;
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
 }
@@ -198,27 +197,27 @@ h2 {
 
 .cart-item-name {
 
-    font-size: 1.2rem; /* Adjust font size for better readability on small screens */
+    font-size: 1.2rem;
     color: #333;
-    flex: 1; /* Allow flex items to grow */
-    text-align: left; /* Center text for uniformity */
+    flex: 1;
+    text-align: left;
 }
 .cart-item-quantity {
 
-    font-size: 1.2rem; /* Adjust font size for better readability on small screens */
+    font-size: 1.2rem;
     color: #333;
-    flex: 1; /* Allow flex items to grow */
-    text-align: center; /* Center text for uniformity */
+    flex: 1;
+    text-align: center;
 }
 .cart-item-total {
-    font-size: 1.2rem; /* Adjust font size for better readability on small screens */
+    font-size: 1.2rem;
     color: #333;
-    flex: 1; /* Allow flex items to grow */
-    text-align: left; /* Center text for uniformity */
+    flex: 1;
+    text-align: left;
 }
 
-/* Remove Button Styling */
-.cart-item-remove {
+                                                    
+.cart-item-remove {                                                    /* REMOVE BUTTON */
     background-color: #ff0000;
     color: white;
     border: none;
@@ -233,59 +232,58 @@ h2 {
     background-color: #d9534f;
 }
 
-/* Cart Total Styling */
-#cart-total {
-    font-size: 1.2rem; /* Slightly larger font size for the total */
+
+#cart-total {                                                          /* CART TOTAL */
+    font-size: 1.2rem; 
     font-weight: bold;
     margin-top: 20px;
     text-align: right;
     color: #3a67b0;
 }
 
-/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     main {
-        grid-template-columns: 1fr; /* Single column layout for mobile screens */
+        grid-template-columns: 1fr;                                    /* Single column layout for mobile screens */
         grid-template-areas:
             "menu"
             "cart";
     }
 
     #menu, #cart {
-        margin-bottom: 20px; /* Space between sections */
+        margin-bottom: 20px;                                           /* Space between sections */
     }
 
     #cart h2 {
-        font-size: 1.5rem; /* Smaller font size for the header */
+        font-size: 1.5rem;
     }
 
     .cart-item {
-        flex-direction: row; /* Ensure horizontal layout on smaller screens */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        align-items: center; /* Center items vertically */
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center; 
     }
 
     .cart-item-name,
     .cart-item-quantity,
     .cart-item-total {
-        font-size: 1rem; /* Adjust font size for better readability on small screens */
-        margin-right: 10px; /* Space between items */
+        font-size: 1rem;
+        margin-right: 10px;
     }
 
     .cart-item-remove {
         font-size: 0.9rem;
         padding: 6px 10px;
-        margin-top: 0; /* No additional space above remove button */
+        margin-top: 0;
     }
 
     #cart-total {
-        font-size: 1.2rem; /* Slightly larger font size for the total */
+        font-size: 1.2rem; 
     }
 }
 
 @media (max-width: 480px) {
     #cart h2 {
-        font-size: 1.25rem; /* Even smaller font size for very small screens */
+        font-size: 1.25rem;
     }
 
     .cart-item-remove {
