@@ -98,3 +98,62 @@ checkoutBtn.addEventListener('click', () => {
 });
 
 displayCart();
+
+
+
+
+//FIREBASE STUFF
+
+
+// Initialize Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyBNE6getyPeyruCVEhwdXfAHhANHFh0u8U",
+    authDomain: "ft-barapp.firebaseapp.com",
+    databaseURL: "https://ft-barapp-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "ft-barapp",
+    storageBucket: "ft-barapp.appspot.com",
+    messagingSenderId: "153671637980",
+    appId: "1:153671637980:web:5ee6449e6e6dd4050bcd19",
+    measurementId: "G-T7QYFBVSD9"
+  };
+
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
+
+// Example function to add an order to Firestore
+function addToFirestore(name, price, quantity) {
+  db.collection("orders").add({
+    name: name,
+    price: price,
+    quantity: quantity,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+  })
+  .then((docRef) => {
+    console.log("Document written with ID: ", docRef.id);
+    // Optionally, update UI to reflect successful addition
+  })
+  .catch((error) => {
+    console.error("Error adding document: ", error);
+    // Handle errors
+  });
+}
+
+// Modify addToCart function to add to Firestore instead of localStorage
+function addToCart(name, price, quantity) {
+  // Your addToCart logic here
+  addToFirestore(name, price, quantity);
+}
+
+// Modify displayCart function to fetch from Firestore instead of localStorage
+function displayCart() {
+  // Your displayCart logic here, fetching from Firestore
+}
+
+
+
+
+
+
+
+
