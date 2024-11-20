@@ -14,6 +14,11 @@ function getDrinkName(optionText) {
 }
 
 function addToCart(name, price, quantity) {
+    console.log(name);
+    console.log(price);
+    console.log(quantity);
+    console.log(localStorage.getItem('cart'));
+    
     const existingItem = cartItems.find(item => item.name === name);
 
     if (existingItem) {
