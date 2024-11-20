@@ -1,9 +1,9 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #ddeeff;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #333111;
 }
 
 header {
@@ -58,8 +58,8 @@ main {
     padding: 20px;
 }
 
-#menu, #cart {                                                                      /* MENU BACKGROUND */
-    background-color: rgba(180, 240, 255, 0.3); 
+#menu, #cart {                                                         		/* MENU BACKGROUND */
+    background-color: rgba(180, 240, 255, 0.3);
     padding: 20px;
     border-radius: 12px;
     font-family: 'Georgia', serif;
