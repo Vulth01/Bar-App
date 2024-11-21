@@ -6,6 +6,8 @@ const checkoutBtn = document.getElementById('checkout-btn');
 
 let cartItems = [];
 
+
+
 // Function to extract drink name from the selected option
 function getDrinkName(optionText) {
     // Remove the type and price part from the option text
@@ -14,11 +16,6 @@ function getDrinkName(optionText) {
 }
 
 function addToCart(name, price, quantity) {
-    console.log(name);
-    console.log(price);
-    console.log(quantity);
-    console.log(localStorage.getItem('cart'));
-    
     const existingItem = cartItems.find(item => item.name === name);
 
     if (existingItem) {
@@ -50,7 +47,9 @@ function displayCart() {
             <span class="cart-item-name">${item.name}</span>
             <span class="cart-item-quantity">x ${item.quantity}</span>
             <span class="cart-item-total">R ${(item.price * item.quantity).toFixed(2)}</span>
-            <button class="cart-item-remove">Remove</button>
+            <button class="cart-item-subtract">-1</button>
+            <button class="cart-item-remove"><img src="images/cart-remove.png"/></button>
+            <button class="cart-item-add">+1</button>
         `;
 
         cartItemsList.appendChild(itemElement);
@@ -68,6 +67,44 @@ function displayCart() {
             removeFromCart(itemName);
         });
     });
+    
+    const subtractButtons = document.querySelectorAll('.cart-item-subtract');
+    subtractButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const itemName = button.parentElement.dataset.name;
+            subtractItem(itemName);
+        });
+    });
+    
+    const addButtons = document.querySelectorAll('.cart-item-add');
+    addButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const itemName = button.parentElement.dataset.name;
+            addItem(itemName);
+        });
+    });
+}
+
+
+function subtractItem(name) {
+    const item = cartItems.find(item => item.name === name);
+    
+    if (item) {
+        if (item.quantity > 1) {
+            item.quantity -= 1; 
+        } else {
+            removeFromCart(name);
+        }
+    }
+
+    displayCart();
+}
+
+function addItem(name) {
+    const item = cartItems.find(item => item.name === name);
+    item.quantity += 1;
+    
+    displayCart();
 }
 
 function removeFromCart(name) {
@@ -86,7 +123,7 @@ function addToCartFromSelect() {
     }
 
     const optionText = selectedOption.textContent.trim();
-    const name = getDrinkName(optionText); // Get only the drink name
+    const name = getDrinkName(optionText);
     const price = parseFloat(selectedOption.value);
     const quantity = parseInt(document.getElementById('select-quantity').value);
 
@@ -99,7 +136,7 @@ function addToCartFromSelect() {
 }
 
 checkoutBtn.addEventListener('click', () => {
-    window.location.href = 'checkout.html'; // Make sure this is correct
+    window.location.href = 'checkout.html';
 });
 
 displayCart();
