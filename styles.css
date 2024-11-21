@@ -160,25 +160,31 @@ h2 {
 /* Cart Header for Item Details */
 .cart-header {
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr; /* Adjust column widths for spacing */
-    gap: 10px;
+    grid-template-columns: 1.8fr 1fr 1.5fr; /* Adjust column widths for spacing */
+    gap: 5px;
     margin-bottom: 10px; /* Space between header and items */
     font-weight: bold;
 }
 
 /* Specific styling for headers to shift Quantity and Total */
 .cart-header .cart-header-name {
-    padding-left: 40px;
-    text-align: left; /* Ensure "Name" is aligned to the left */
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: space-between; /* Space items evenly */
+    padding: 10px 0;
+    text-align: left; /* Center text for uniformity */
 }
 
 .cart-header .cart-header-quantity{
-    padding-left: 0px; /* Add padding to move Quantity and Total headers to the left */
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: space-between; /* Space items evenly */
+    padding: 10px 0;
     text-align: left; /* Center text for uniformity */
 
 }
 .cart-header .cart-header-total {
-    padding-left: 10px; /* Add padding to move Quantity and Total headers to the left */
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: space-between; /* Space items evenly */
+    padding: 10px 0;
     text-align: left; /* Center text for uniformity */
 }
 
@@ -217,21 +223,87 @@ h2 {
     text-align: left; /* Center text for uniformity */
 }
 
-/* Remove Button Styling */
+
+/*REMOVE ITEM*/
 .cart-item-remove {
-    background-color: #ff0000;
-    color: white;
+    background-color: rgba(180, 240, 255, 0.3);
+    color: rgba(255, 255, 255, 0);
     border: none;
-    padding: 8px 12px;
-    border-radius: 8px;
+    border-radius: 0px;  /* Smaller border radius for a compact look */
     cursor: pointer;
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0rem;  /* Base font size */
+    margin: 0 0.0rem; /* Margin between buttons */
+}
+
+.cart-item-remove img {
+    width: 1.5rem;  /* Set a smaller width for the image */
+    height: 1.5rem; /* Set a smaller height for the image */
+    object-fit: contain;  /* Ensure the image is contained within the bounds */
 }
 
 .cart-item-remove:hover {
-    background-color: #d9534f;
+    background-color: #ffffff00;
 }
+
+
+
+/*SUBTRACT ITEM*/
+.cart-item-subtract{
+    background-color: #ddeeff;
+    color:  black;
+    border: none;
+    padding: 0rem 0.3rem;  /* Base padding for both buttons */
+    border-radius: 1px;  /* Smaller border radius for a compact look */
+    cursor: pointer;
+    font-size: 0.6rem;  /* Base font size */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0 0.2rem; /* Margin between buttons */
+}
+
+.cart-item-subtract:hover {
+    background-color: #777777;
+}
+
+/*ADD ITEM*/
+.cart-item-add{
+    background-color: #ddeeff;
+    color: black;
+    border: none;
+    padding: 0rem 0.3rem;  /* Base padding for both buttons */
+    border-radius: 1px;  /* Smaller border radius for a compact look */
+    cursor: pointer;
+    font-size: 0.6rem;  /* Base font size */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0 0.2rem; /* Margin between buttons */
+}
+
+.cart-item-add:hover {
+    background-color: #777777;
+}
+
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    /* Smaller padding and font size for both buttons */
+    .cart-item-subtract, .cart-item-remove {
+        padding: 0.25rem 0.5rem;  /* Reduced padding for smaller screens */
+        font-size: 0.8rem;  /* Reduced font size */
+    }
+
+    /* Reduce margin between buttons */
+    .cart-item-subtract,
+    .cart-item-remove {
+        margin: 0 0.3rem;  /* Less margin between buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce padding and font size for very small screens */
+    
+}
+
 
 /* Cart Total Styling */
 #cart-total {
@@ -255,7 +327,12 @@ h2 {
         margin-bottom: 20px; /* Space between sections */
     }
 
-    #cart h2 {
+    .quantity-selector label {
+        font-size: 1rem;  /* Ensure the label's font size is set here */
+    }
+    
+
+    #cart h2, #menu h2 {
         font-size: 1.5rem; /* Smaller font size for the header */
     }
 
@@ -268,28 +345,17 @@ h2 {
     .cart-item-name,
     .cart-item-quantity,
     .cart-item-total {
-        font-size: 1rem; /* Adjust font size for better readability on small screens */
+        font-size: 0.7rem; /* Adjust font size for better readability on small screens */
         margin-right: 10px; /* Space between items */
     }
-
-    .cart-item-remove {
-        font-size: 0.9rem;
-        padding: 6px 10px;
-        margin-top: 0; /* No additional space above remove button */
+    
+    .cart-item-subtract, .cart-item-remove {
+        padding: 0.2rem 0.4rem;  /* Much smaller padding */
+        font-size: 0.9rem;  /* Even smaller font size */
+        margin: 0 0.2rem;  /* Minimal margin between buttons */
     }
 
     #cart-total {
         font-size: 1.2rem; /* Slightly larger font size for the total */
-    }
-}
-
-@media (max-width: 480px) {
-    #cart h2 {
-        font-size: 1.25rem; /* Even smaller font size for very small screens */
-    }
-
-    .cart-item-remove {
-        font-size: 0.8rem;
-        padding: 6px 8px;
     }
 }
